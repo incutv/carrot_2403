@@ -1,0 +1,78 @@
+/*.space_info_container {*/
+/*    display: flex;*/
+/*    gap: 16px; !* 두 요소 사이에 간격을 줄 수 있습니다 *!*/
+/*    align-items: center; !* 아이템들이 세로 방향으로 가운데 정렬됩니다 *!*/
+/*}*/
+
+/*.space_info {*/
+/*    display: flex;*/
+/*    gap: 8px; !* 아이콘들 사이의 간격 *!*/
+/*}*/
+
+/*.space_info_count {*/
+/*    display: flex;*/
+/*    gap: 8px; !* 숫자들 사이의 간격 *!*/
+/*}*/
+
+/*.amenity_info {*/
+/*    display: flex;*/
+/*    gap: 8px;*/
+/*}*/
+.room_images {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.room_images img {
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.image-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contract-card {
+  position: sticky;
+  top: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.contract-card button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.room_amenity {
+  margin: 20px;
+}
+
+.amenity_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}

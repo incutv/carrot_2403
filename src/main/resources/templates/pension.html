@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{layout/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <title>당근모아 | 숙소</title>
+  <link rel="stylesheet" th:href="@{/css/test001.css}"/>
+  <link rel="stylesheet" th:href="@{/css/guest_search_main.css}"/>
+</head>
+
+<main class="main-container" layout:fragment="main">
+  <div class="cover cover-color2">
+    <div class="cover-content">
+      <h1 class="cover-title">
+        숙숙숙 <br>
+        소소소
+      </h1>
+      <span>
+                숙소숙소 <br>
+                지금 경험해보세요.
+            </span>
+      <div class="cover-image-90">
+        <img alt="" src="/images/cover/cover3.png">
+      </div>
+    </div>
+  </div>
+  <div class="test001div">
+    <!-- 지역 키워드로 검색 -->
+    <div class="search-bar-container">
+      <h2 class="main-text">당근 숙소, 색다른 숙소 특별한 여행</h2>
+      <div class="keyword-input">
+                <span>
+<!--                    th:href="@{/room/detail/{id}(id=${room.id})}" 써보기, controller에서는 @PathVariable-->
+                    <form method="get" th:action="@{/guest/search}">
+                    <input id="keyword" name="keyword" placeholder="주소, 지역, 이름 등 키워드를 입력하세요." type="text">
+                    <button type="submit">검색</button>
+                </form>
+                </span>
+      </div>
+    </div>
+  </div>
+
+</main>
+</html>

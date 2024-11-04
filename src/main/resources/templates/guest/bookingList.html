@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{layout/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <title th:text="${room.title} + ' 단기임대 숙소 | 당근모아'"> 단기임대 숙소 | 당근모아 </title>
+  <link rel="stylesheet" th:href="@{/css/guest_room_detail.css}"/>
+</head>
+
+<main layout:fragment="main">
+  <div class="container">
+    <h3 class="title"> 계약관리 </h3>
+    <div class="guest_contract">
+      <div class="booking-item">
+        <div class="booking-header" th:each="reservations : ${reservations}">
+          <div class="booking-booked" th:if="${reservation.status == 1}">
+            <input name="id" th:value="${reservations.accommodationId}" type="hidden">
+            <h4 class="title"> 계약 목록 </h4>
+            <div class="contract-header">
+              <div class="flex" style="cursor:pointer" target="_blank" th:onclick="@{/guest/booking/{id}(id=${reservations.accommodationId})}"></div>
+              <span class="badge gray">계약취소</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <h4 class="canceled_contract">취소된 계약</h4>
+  </div>
+</main>
+</html>

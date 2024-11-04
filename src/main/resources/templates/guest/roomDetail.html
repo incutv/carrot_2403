@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{layout/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <title th:text="${room.title} + ' 단기임대 숙소 | 당근모아'"> 단기임대 숙소 | 당근모아 </title>
+  <link rel="stylesheet" th:href="@{/css/guest_room_detail.css}"/>
+</head>
+
+<main layout:fragment="main">
+  <div class="flex">
+    <div class="container" th:object="${room}">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="room_info">
+            <div class="title">
+              <h2 th:text="*{title}">애버랜드</h2>
+              <p th:text="*{roadAddress}">용인시 처인구 애버랜드로</p>
+            </div>
+            <div class="room_images" id="roomImages">
+              <div th:each="image : ${room.imageUrls}">
+                <img style="width: 100%; max-width: 600px;" th:src="${image}">
+              </div>
+            </div>
+            <div class="image-controls">
+              <button onclick="prevImage()">&#10094;</button>
+              <button onclick="nextImage()">&#10095;</button>
+            </div>
+            <div class="room_content">
+              <strong> 소개합니다 </strong>
+              <p th:text="*{content}"></p>
+            </div>
+            <div class="room_amenity">
+              <strong>기본 옵션 정보</strong>
+              <div class="amenity_info" th:each="amenity : ${amenities}">
+                <img th:src="${amenity.iconUrl}">
+                <p th:text="${amenity.name}"></p>
+              </div>
+            </div>
+            <div class="transportation_info">
+              <strong>교통 & 위치</strong>
+              <p th:text="${room.lotAddress} + ${room.detailAddress}"></p>
+              <p th:text="${room.transportationInfo}"></p>
+            </div>
+          </div>
+        </div>
+        <div class="room_space_count">
+          <strong>공간 기본 정보</strong>
+          <div class="space_info_container">
+            <div class="space_info" th:each="icon : ${icons}">
+              <img alt="Space Icon" th:src="${icon.icon}">
+            </div>
+            <div class="space_info_count" th:each="count : ${room.spaceCounts}">
+              <p th:text="${count}"> 개</p>
+            </div>
+          </div>
+        </div>
+        <div class="profile" th:each="profile : ${profile}">
+          <dl>
+            <dt class="profile_img">
+              <img id="pic_url" th:src="${profile.picUrl}">
+            </dt>
+            <dd>
+              <div class="profile_name">
+                <strong th:text="${profile.nickname}">최이재</strong>
+              </div>
+              <p class="introduce" th:text="${profile.bio}">안녕하세요:)</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="room_contract">
+      <div class="top_icon">
+        <button class="btn_like" rid="27121" type="button" uid="200143">
+          <span class="blind">찜하기</span>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <div class="contract-card">
+          <strong>가격 정보</strong>
+          <p th:text="${room.price}"></p>
+          <button onclick="openCalendar()">계약하기</button>
+          <div id="calendarModal" style="display:none;">
+            <div id="calendar"></div>
+          </div>
+        </div>
+        <div class="room_pay">
+          <p>
+            <strong th:text="${room.price}"></strong>
+            <em>원</em>
+            <span> / 1주 </span>
+          </p>
+        </div>
+        <div class="btn_full">
+          <a class="btn medium purple" id="btn_booking_now">계약하기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

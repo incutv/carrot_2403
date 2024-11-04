@@ -1,0 +1,87 @@
+/*------------------------------------------------
+  service
+------------------------------------------------*/
+.cover {
+  display: flex;
+  width: 100%;
+  height: 315px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-flea-market {
+  background-color: #FFF0AA;
+}
+
+.cover-color2 {
+  background-color: #D2EDF9;
+}
+
+.cover-community {
+  background-color: #FFE2D2;
+}
+
+.cover-content {
+  position: relative;
+  display: flex;
+  width: 768px;
+  padding-top: 50px;
+  height: 265px;
+  flex-direction: column;
+}
+
+.cover-title {
+  line-height: 1.5;
+  font-size: 34px;
+  letter-spacing: -0.32px;
+}
+
+.cover-description {
+  display: block;
+  line-height: 1.32;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+  margin-top: 16px;
+}
+
+.cover-image-90 {
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  height: 90%;
+  right: 0;
+}
+
+.cover-image-100 {
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  right: 0;
+}
+
+/*------------------------------------------------
+  flea-market
+------------------------------------------------*/
+.flea-market-article-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px;
+  flex-direction: column;
+}
+
+.article-list-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

@@ -1,0 +1,7 @@
+.my-page-child {
+  display: block;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid #000;
+  padding: 10px;
+}

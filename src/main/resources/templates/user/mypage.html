@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{layout/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <link rel="stylesheet" th:href="@{/css/my-page.css}"/>
+  <link rel="stylesheet" th:href="@{/css/user.css}"/>
+  <title>테스트</title>
+</head>
+
+<main layout:fragment="main">
+  <div class="child">
+    <div class="profile_area">
+      <div class="profile_inner">
+        <a class="photo" href="#">
+          <img alt="프로필 이미지" height="84" src="https://static.nid.naver.com/images/web/user/default.png" width="84">
+          <span class="photo_edit"></span>
+        </a>
+        <div class="profile">
+          <p class="useid">닉네임</p>
+          <p class="usemail">이메일</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="child">asd</div>
+</main>
+</html>
