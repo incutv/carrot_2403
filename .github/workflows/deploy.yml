@@ -46,4 +46,4 @@ jobs:
             pkill -f 'app.jar' || true
 
             # 애플리케이션 실행
-            nohup java -Djasypt.encryptor.password=carrotsS3 -jar $APP_DIR/app.jar
+            nohup java -Djasypt.encryptor.password=carrotsS3 -jar /home/ec2-user/app.jar &
