@@ -46,5 +46,5 @@ jobs:
             pkill -f 'app.jar' || true
 
             # 애플리케이션 실행
-            nohup java -jar $APP_DIR/app.jar > $APP_DIR/app.log 2>&1 &
+            nohup java -Djasypt.encryptor.password=carrotsS3 -jar $APP_DIR/app.jar > $APP_DIR/app.log 2>&1 &
           EOF
