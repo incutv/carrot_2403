@@ -30,7 +30,7 @@ jobs:
         env:
           EC2_HOST: ${{ secrets.EC2_PUBLIC_IP }}        # EC2 인스턴스의 퍼블릭 IP
           EC2_USER: "ec2-user"         # EC2 사용자명 (예: ec2-user)
-          APP_DIR: "/home/app/git"         # EC2에서 앱을 배포할 디렉토리 (예: /home/ec2-user/app)
+          APP_DIR: "/home/ec2-user"         # EC2에서 앱을 배포할 디렉토리 (예: /home/ec2-user/app)
         run: |
           # SSH 설정
           mkdir -p ~/.ssh
